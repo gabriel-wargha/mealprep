@@ -1,87 +1,32 @@
-# Welcome to React Router!
+# MealPrep Planner — CSE 310 Project
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A web app that lets you pick recipes, scale them to the number of meals you need, and get a combined shopping list — with accounts and saved plans.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+**Chosen stack:** React Router v7 (framework mode = React frontend + Node backend) · SQLite + Prisma · built-in cookie sessions.
 
 ---
 
-Built with ❤️ using React Router.
+## What's in this folder
+
+**Start here — the two main documents:**
+
+- **`MealPrep-ReactRouter-Plan.md`** — the full architecture: every file, the database schema, all the loaders/actions, the scaling library, and the auth setup. Your reference for *what the code is*.
+- **`MealPrep-ReactRouter-Build-Guide.md`** — the higher-level build guide (6 work sessions on the Mon/Wed/Sat schedule). Your reference for *how the sessions flow*.
+
+**`MealPrep-10-Day-Plan/`** — the day-by-day version, one file per day (Day 01–Day 10). Each has a "Study first" section and a "Build today" section with the actual code. Follows a frontend → backend → database order:
+
+- Days 1–3: Frontend (setup, layout, page UIs)
+- Days 4–7: Backend (loaders, actions + scaling, authentication)
+- Days 8–10: Database (Prisma setup, swap the data layer, seed + polish + submit)
+
+**`other-stacks-archive/`** — earlier plans for stacks I considered before settling on React Router (Django, and Next.js). Kept for reference; not needed to build the project.
+
+---
+
+## The build order in one line
+
+Frontend first (with hardcoded data) → add the backend loaders/actions → swap the data layer to a real database last. A single file (`app/lib/data.server.js`) is the seam that makes the database swap painless.
+
+## Rubric coverage
+
+Meets all 5 required items (dynamic page, pictures/CSS, user input, error checking, output changes from input) plus all 3 stretch goals (database, extra pages, JS library). The rubric→file map is at the end of `MealPrep-ReactRouter-Plan.md`.
