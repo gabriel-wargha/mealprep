@@ -13,3 +13,6 @@
 # Prisma (Day 8+) — the local SQLite database
 /prisma/*.db
 /prisma/*.db-journal
+
+# Personal build plan / notes (kept local, not part of the app)
+/MealPrep-10-Day-Plan/
